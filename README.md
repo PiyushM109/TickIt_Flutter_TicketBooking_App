@@ -1,4 +1,4 @@
-# tickit
+# TickIt
 
 A new Flutter project.
 
