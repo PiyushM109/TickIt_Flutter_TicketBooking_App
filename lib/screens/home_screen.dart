@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:tickit/screens/ticket_view.dart';
 import 'package:tickit/utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -82,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: (){
-                        print("You are tapped");
+                        print("You are tapped"); 
                       },
                       child: Text(
                         "View all",
@@ -94,6 +95,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
+          TicketView(),
         ],
       ),
     );
