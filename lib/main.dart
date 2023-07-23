@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tickit/screens/bottom_bar.dart';
+import 'package:tickit/utils/app_styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'TickIt',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        primaryColor: primary,
         useMaterial3: true,
       ),
       home: const BottomBar()
