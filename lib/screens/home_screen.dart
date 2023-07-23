@@ -1,3 +1,4 @@
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:tickit/utils/app_styles.dart';
@@ -12,12 +13,11 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
                 const Gap(40),
                 Row(
-
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
@@ -50,7 +50,47 @@ class HomeScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                
+                const Gap(20),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF4F6FD),
+                    borderRadius: BorderRadius.circular(7),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          FluentSystemIcons.ic_fluent_search_regular,
+                          color: Color(0xFFBFC205),
+                        ),
+                        Text(
+                          "Search",
+                          style: styles.headLineStyle4,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                const Gap(15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Upcoming Flights",
+                      style: styles.headLineStyle2,
+                    ),
+                    InkWell(
+                      onTap: (){
+                        print("You are tapped");
+                      },
+                      child: Text(
+                        "View all",
+                        style: styles.textStyle.copyWith(color: styles.primaryColor),
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),
