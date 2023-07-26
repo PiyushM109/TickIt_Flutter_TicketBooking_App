@@ -82,12 +82,13 @@ class HomeScreen extends StatelessWidget {
                       style: styles.headLineStyle2,
                     ),
                     InkWell(
-                      onTap: (){
-                        print("You are tapped"); 
+                      onTap: () {
+                        print("You are tapped");
                       },
                       child: Text(
                         "View all",
-                        style: styles.textStyle.copyWith(color: styles.primaryColor),
+                        style: styles.textStyle
+                            .copyWith(color: styles.primaryColor),
                       ),
                     )
                   ],
@@ -96,7 +97,14 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(15),
-          TicketView(),
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left : 24),
+            child: Row(children: [
+              TicketView(),
+              TicketView(),
+            ]),
+          )
         ],
       ),
     );
