@@ -5,6 +5,7 @@ import 'package:tickit/screens/hotel_screen.dart';
 import 'package:tickit/screens/ticket_view.dart';
 import 'package:tickit/utils/app_info_list.dart';
 import 'package:tickit/utils/app_styles.dart';
+import 'package:tickit/widgets/head_viewAll.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -76,25 +77,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(15),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming Flights",
-                      style: styles.headLineStyle2,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("You are tapped");
-                      },
-                      child: Text(
-                        "View all",
-                        style: styles.textStyle
-                            .copyWith(color: styles.primaryColor),
-                      ),
-                    )
-                  ],
-                )
+                const ListHead(bigText: "Upcoming Flights", smallText: "View all",)
               ],
             ),
           ),
@@ -105,25 +88,9 @@ class HomeScreen extends StatelessWidget {
             child: Row(children: ticketList.map((ticket) => TicketView(ticket: ticket)).toList()),
           ),
           const Gap(15),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Hotels",
-                  style: styles.headLineStyle2,
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    "View all",
-                    style:
-                        styles.textStyle.copyWith(color: styles.primaryColor),
-                  ),
-                )
-              ],
-            ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: ListHead(bigText: "Hotels", smallText: "View all",)
           ),
           const Gap(25),
           SingleChildScrollView(
