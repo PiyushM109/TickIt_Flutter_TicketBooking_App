@@ -4,6 +4,7 @@ import 'package:tickit/utils/app_layout.dart';
 import 'package:tickit/utils/app_styles.dart';
 import 'package:tickit/widgets/head_viewAll.dart';
 import 'package:tickit/widgets/icon_text_widget.dart';
+import 'package:tickit/widgets/ticket_tab.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -28,43 +29,7 @@ class SearchScreen extends StatelessWidget {
             ),
           ),
           Gap(AppLayout.getHeight(20)),
-          FittedBox(
-            child: Container(
-              padding: const EdgeInsets.all(3.5),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppLayout.getHeight(50)),
-                color: Color(0xFFF4F6FD),
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    width: size.width * 0.50,
-                    padding: EdgeInsets.symmetric(
-                        vertical: AppLayout.getHeight(7),
-                        horizontal: AppLayout.getWidth(7)),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(AppLayout.getHeight(50))),
-                      color: Colors.white,
-                    ),
-                    child: Center(child: Text("Aireline Tickets")),
-                  ),
-                  Container(
-                    width: size.width * 0.50,
-                    padding: EdgeInsets.symmetric(
-                        vertical: AppLayout.getHeight(7),
-                        horizontal: AppLayout.getWidth(7)),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.horizontal(
-                          right: Radius.circular(AppLayout.getHeight(50))),
-                      color: Colors.transparent,
-                    ),
-                    child: Center(child: Text("Hotels")),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          const AppTicketTabs(text1: 'Airline Tickets', text2: 'Hotels',),
           Gap(AppLayout.getHeight(25)),
           const AppIcon(icon: Icons.flight_takeoff_rounded, text: "Departure"),
           Gap(AppLayout.getHeight(18)),
