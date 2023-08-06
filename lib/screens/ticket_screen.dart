@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:gap/gap.dart';
 import 'package:tickit/screens/ticket_view.dart';
 import 'package:tickit/utils/app_info_list.dart';
 import 'package:tickit/utils/app_layout.dart';
 import 'package:tickit/utils/app_styles.dart';
+import 'package:tickit/widgets/column_layout.dart';
+import 'package:tickit/widgets/layout_builder.dart';
 
 import '../widgets/ticket_tab.dart';
 
@@ -41,29 +44,43 @@ class TicketScreen extends StatelessWidget {
                 isColor: true,
               ),
             ),
+            const SizedBox(
+              height: 1,
+            ),
             Container(
               margin: EdgeInsets.only(left: AppLayout.getHeight(12)),
-              padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(10)),
+              padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(20)),
               color: Colors.white,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: AppLayout.getHeight(10)),
-                    child: Row(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 10.0, right: 10.0, bottom: 10.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          children: [
-                            Text("Flutter DB", style: styles.headLineStyle3,),
-                            Gap(AppLayout.getHeight(5)),
-                            Text("Passenger", style: styles.headLineStyle3,)
-                          ],
-                        )
+                        ColumnLayout(
+                          firstText: 'Flutter DB',
+                          secondtext: 'Passenger',
+                          alignment: CrossAxisAlignment.start,
+                        ),
+                        ColumnLayout(
+                          firstText: '52217875919',
+                          secondtext: 'Passport',
+                          alignment: CrossAxisAlignment.end,
+                        ),
                       ],
                     ),
-                  )
-                ],
+                    Gap(AppLayout.getHeight(20)),
+                    const Layout(
+                      sections: 8,
+                      isColor: true,
+                    ),
+                  ],
+                ),
               ),
-            )
+            ),
           ],
         ),
       ]),
