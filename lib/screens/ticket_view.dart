@@ -91,7 +91,7 @@ class TicketView extends StatelessWidget {
                     Text(
                       ticket['flying_time'],
                       style: styles.headLineStyle4.copyWith(
-                        color: isColor == null ? const Color.fromARGB(255, 44, 38, 38) : Colors.black,
+                        color: isColor == null ? Colors.white : Colors.black,
                       ),
                     ),
                     const Spacer(),

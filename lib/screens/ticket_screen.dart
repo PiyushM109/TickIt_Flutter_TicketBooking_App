@@ -7,6 +7,7 @@ import 'package:tickit/utils/app_layout.dart';
 import 'package:tickit/utils/app_styles.dart';
 import 'package:tickit/widgets/column_layout.dart';
 import 'package:tickit/widgets/layout_builder.dart';
+import 'package:barcode_widget/barcode_widget.dart';
 
 import '../widgets/ticket_tab.dart';
 
@@ -77,8 +78,92 @@ class TicketScreen extends StatelessWidget {
                       sections: 8,
                       isColor: true,
                     ),
+                    Gap(AppLayout.getHeight(20)),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        ColumnLayout(
+                          firstText: '0055 444 77147',
+                          secondtext: 'Number of E-ticket',
+                          alignment: CrossAxisAlignment.start,
+                        ),
+                        ColumnLayout(
+                          firstText: 'B2SG28',
+                          secondtext: 'Booking Code',
+                          alignment: CrossAxisAlignment.end,
+                        ),
+                      ],
+                    ),
+                    Gap(AppLayout.getHeight(20)),
+                    const Layout(
+                      sections: 8,
+                      isColor: true,
+                    ),
+                    Gap(AppLayout.getHeight(20)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/visa.png',
+                                  scale: 11,
+                                ),
+                                Text(
+                                  " *** 2462",
+                                  style: styles.headLineStyle3
+                                      .copyWith(color: Colors.black),
+                                )
+                              ],
+                            ),
+                            Gap(0),
+                            Text(
+                              "Payment Method",
+                              style: styles.headLineStyle4
+                                  .copyWith(color: Colors.black),
+                            )
+                          ],
+                        ),
+                        const ColumnLayout(
+                          firstText: '₹25000',
+                          secondtext: 'Price',
+                          alignment: CrossAxisAlignment.end,
+                        ),
+                      ],
+                    ),
                   ],
                 ),
+              ),
+            ),
+            const SizedBox(
+              height: 1,
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(bottomRight: Radius.circular(15), bottomLeft: Radius.circular(15))
+              ),
+              margin: EdgeInsets.only(left: AppLayout.getHeight(12)),
+              padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(20), horizontal: AppLayout.getWidth(20)),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
+                child: BarcodeWidget(
+                  barcode: Barcode.code128(),
+                  data: 'https://github.com/PiyushM109',
+                  drawText: false,
+                  color: styles.textColor,
+                  width: double.infinity,
+                  height: 70,
+                ),
+              ),
+            ),
+            Gap(AppLayout.getHeight(15)),
+            Container(
+              child: TicketView(
+                ticket: ticketList[0],
+                
               ),
             ),
           ],
