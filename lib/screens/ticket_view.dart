@@ -135,7 +135,7 @@ class TicketView extends StatelessWidget {
                           mainAxisSize: MainAxisSize.max,
                           children: List.generate(
                             (constraints.constrainWidth() / 15).floor(),
-                            (index) => SizedBox(
+                            (index) => const SizedBox(
                               width: 5,
                               height: 1,
                               child: DecoratedBox(
@@ -153,7 +153,7 @@ class TicketView extends StatelessWidget {
                     child: DecoratedBox(
                         decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(10),
                               bottomLeft: Radius.circular(10),
                             ))),
