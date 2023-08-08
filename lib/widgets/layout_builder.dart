@@ -24,7 +24,7 @@ class Layout extends StatelessWidget {
                     height: 1,
                     child: DecoratedBox(
                         decoration: BoxDecoration(
-                      color: isColor == null ? Colors.white : Colors.black,
+                      color: isColor == null ? Colors.white : Colors.grey[400],
                     )),
                   )),
         );
